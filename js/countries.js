@@ -12,8 +12,36 @@ const displayCountries = (countries) => {
     container.innerHTML = allCountryHTML.join(' '); //add-space-between-element
 
 }
+// another option
+const getCountryHTML = ({name, flags, area, region}) =>{
 
-getCountryHTML = country =>{
+   return `
+       <div class = "country">
+          <h2>${name.common} </h2>
+          <p> Area: ${area}</p>
+          <p> Continent: ${region}</p>
+          <img src = "${flags.png}">
+       </div>
+   `
+}
+
+// another way 
+/*  
+const getCountryHTML = country =>{
+     // option
+     const {name, flags} = country;
+    return `
+        <div class = "country">
+           <h2>${name.common} </h2>
+           <img src = "${flags.png}">
+        </div>
+    `
+} 
+*/
+
+// another way
+ /*
+  const getCountryHTML = country =>{
     return `
         <div class = "country">
            <h2>${country.name.common} </h2>
@@ -21,6 +49,6 @@ getCountryHTML = country =>{
         </div>
     `
 }
-
+ */
 loadCountries()
 
